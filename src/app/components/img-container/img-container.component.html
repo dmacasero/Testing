@@ -1,1 +1,12 @@
-img-container works!
+<div>
+  <ng-container *ngFor="let obj of content">
+    <span class="content">
+      <img
+        [hidden]="obj.type !== 'img'"
+        *ngFor="let pic of obj.data"
+        src="{{ pic.img }}"
+        alt=""
+      />
+    </span>
+  </ng-container>
+</div>
