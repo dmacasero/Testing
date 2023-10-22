@@ -1,12 +1,36 @@
 <div>
-  <ng-container *ngFor="let obj of content">
-    <span class="content">
-      <img
-        [hidden]="obj.type !== 'img'"
-        *ngFor="let pic of obj.data"
-        src="{{ pic.img }}"
-        alt=""
-      />
-    </span>
-  </ng-container>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let obj of content">
+        <div class="col-sm">
+          <div *ngFor="let message of obj.data" class="mb-3">
+            <img *ngIf="obj.type === 'img'" src="{{ message.img }}" alt="" />
+            <div *ngIf="obj.type !== 'img'" class="container p-0">
+              <div class="row p-0">
+                <div class="col-sm">
+                  <ng-container *ngIf="message.type === 'header'">
+                    <span class="text-uppercase text-main-header fw-lighter">
+                      {{ message.header }}
+                    </span>
+                    <hr />
+                    <span class="fw-lighter">
+                      {{ message.text }}
+                    </span>
+                  </ng-container>
+                  <ng-container *ngIf="message.type === 'footer'">
+                    <div class="text-uppercase text-main-header footer mt-5">
+                      {{ message.header }}
+                    </div>
+                    <div class="mt-2">
+                      {{ message.text }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>
