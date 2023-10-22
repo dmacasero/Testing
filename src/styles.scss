@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/fonts/opensans.css";
+@import "assets/fonts/opensans_semicondensed.css";
+@import "assets/fonts/opensans_condensed.css";
+
+body {
+  font-family: "OpenSans";
+  // background: #0e1414;
+  margin: 0;
+}
