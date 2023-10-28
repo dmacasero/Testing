@@ -1,3 +1,19 @@
 <div class="page-container">
-  <app-img-container></app-img-container>
+  <div class="wrapper-container">
+    <div class="img-collage-container">
+      <app-img-container></app-img-container>
+    </div>
+    <div class="img-card-container">
+      <div class="card-title">
+        <h1>ALL THE LATEST FROM AEG</h1>
+      </div>
+      <div class="card-list">
+        <div *ngFor="let content of cards">
+          <app-img-card
+          [content]="content"
+          ></app-img-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
