@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ImgModalComponent } from '../img-modal/img-modal.component';
 
 @Component({
   selector: 'app-img-container',
@@ -59,9 +61,14 @@ export class ImgContainerComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}
 
-  showModal(img: string) {}
+  showModal(img: string) {
+    const modalRef = this.modalService.open(ImgModalComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.image = img;
+  }
 }

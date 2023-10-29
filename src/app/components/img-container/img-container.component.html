@@ -4,7 +4,12 @@
       <ng-container *ngFor="let obj of content">
         <div class="col-sm">
           <div *ngFor="let message of obj.data" class="mb-3 item-container">
-            <img *ngIf="obj.type === 'img'" src="{{ message.img }}" alt="" />
+            <img
+              *ngIf="obj.type === 'img'"
+              src="{{ message.img }}"
+              alt=""
+              (click)="showModal(message.imgX2)"
+            />
             <div *ngIf="obj.type !== 'img'" class="container p-0">
               <div class="row p-0">
                 <div class="col-sm">
