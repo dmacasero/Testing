@@ -4,10 +4,9 @@ import { CardContent } from 'src/app/components/img-card/typings';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  
   cards: CardContent[] = [
     {
       img: 'assets/component-02/Image-01.jpg',
@@ -27,11 +26,9 @@ export class HomeComponent implements OnInit {
       header: 'Summer Lunch Menu By Mark Best',
       text: 'AEG ambasaddor Mark Bests summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home.',
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
